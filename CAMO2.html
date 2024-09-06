@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Add all your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .logo {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #splash-screen img {
+            height: 100px;
+        }
+
+        /* Additional styles for the rest of your content */
+    </style>
+</head>
+<body>
+    
+    <div id="splash-screen">
+        <img src="https://tinypic.host/images/2024/09/01/Screenshot_20240901-124320_1.jpeg" alt="Screenshot 20240901 124320 1" border="0" width=200px height=100px alt="Logo">
+    
+    </div>
+
+    <header>
+               <img src="https://tinypic.host/images/2024/09/01/Screenshot_20240901-124320_1.jpeg" alt="Screenshot 20240901 124320 1" border="0" width=200px height=100px alt="Logo"> 
+        <h1>Color Spectrum Project</h1>
+    </header>
+    <!-- Your content sections -->
+   <style>
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height instead of height to adjust dynamically */
+}
+
+.conta {
+    text-align: center;
+    border: 2px solid #333;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #444;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Ensures columns start at the same line */
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.column {
+    display: flex; /* Add flex to each column */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content to the top */
+    width: 45%;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #555;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.content {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    border-top: 2px solid #333;
+    padding: 15px 0;
+    width: 100%;
+    background-color: black;
+}
+
+
+
+Css Code
+
+Css Code        
+        body {
+            font-family: Arial, sans-serif;
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+        }
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        . container {
+            padding: 20px;
+        }
+        .section {
+            display: none; /* Hide all sections by default */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" onclick="showSection('colors')">Colors</a>
+        <a href="#" onclick="showSection('shapes')">Shapes</a>
+        <a href="#" onclick="showSection('editor')">Text Editor</a>
+         <a href="#" onclick="showSection('About')">About</a>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            document.getElementById('splash-screen').style.display = 'none';
+        }, 1000); // 1000 milliseconds = 5 seconds
+    });
+</script>
+  
+        
+        
+        <!-- Color search content goes here -->
+        <style>
+        .search-bar {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+        }
+        .color-list {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .color-item {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 5px 0;
+        }
+        .color-box {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .color-name {
+            display: inline;
+            
+        }
+    </style>
+</head>
+<body>
+<section id ="colors" style="display:none;">
+    <input type="text" class="search-bar" placeholder="Search for a color" oninput="filterColors(this.value)">
+    <div class="color-list" id="colorList">
+        <!-- Color items will be inserted here by JavaScript -->
+    </div>
+</section>
+    <script>
+        const colors = [
+            { name: 'Red', hex: '#FF0000' }, { name: 'Green', hex: '#00FF00' }, { name: 'Blue', hex: '#0000FF' },
+            { name: 'Yellow', hex: '#FFFF00' }, { name: 'Cyan', hex: '#00FFFF' }, { name: 'Magenta', hex: '#FF00FF' },
+            { name: 'Orange', hex: '#FFA500' }, { name: 'Purple', hex: '#800080' }, { name: 'Pink', hex: '#FFC0CB' },
+            { name: 'Lime', hex: '#00FF00' }, { name: 'Teal', hex: '#008080' }, { name: 'Lavender', hex: '#E6E6FA' },
+            { name: 'Brown', hex: '#A52A2A' }, { name: 'Maroon', hex: '#800000' }, { name: 'Navy', hex: '#000080' },
+            { name: 'Olive', hex: '#808000' }, { name: 'Coral', hex: '#FF7F50' }, { name: 'Turquoise', hex: '#40E0D0' },
+            { name: 'Silver', hex: '#C0C0C0' }, { name: 'Gold', hex: '#FFD700' }, { name: 'Crimson', hex: '#DC143C' },
+            { name: 'Indigo', hex: '#4B0082' }, { name: 'Violet', hex: '#EE82EE' }, { name: 'Beige', hex: '#F5F5DC' },
+            { name: 'Mint', hex: '#98FF98' }, { name: 'Peach', hex: '#FFDAB9' }, { name: 'Salmon', hex: '#FA8072' },
+            { name: 'Chocolate', hex: '#D2691E' }, { name: 'Plum', hex: '#DDA0DD' }, { name: 'Orchid', hex: '#DA70D6' },
+            { name: 'Tomato', hex: '#FF6347' }, { name: 'Khaki', hex: '#F0E68C' }, { name: 'Linen', hex: '#FAF0E6' },
+            { name: 'Peru', hex: '#CD853F' }, { name: 'SlateBlue', hex: '#6A5ACD' }, { name: 'SkyBlue', hex: '#87CEEB' },
+            { name: 'LemonChiffon', hex: '#FFFACD' }, { name: 'PapayaWhip', hex: '#FFEFD5' }, { name: 'Moccasin', hex: '#FFE4B5' },
+            { name: 'BlanchedAlmond', hex: '#FFEBCD' }, { name: 'DarkSeaGreen', hex: '#8FBC8F' }, { name: 'MediumPurple', hex: '#9370DB' },
+            { name: 'LightSalmon', hex: '#FFA07A' }, { name: 'RosyBrown', hex: '#BC8F8F' }, { name: 'SandyBrown', hex: '#F4A460' },
+            { name: 'LightCoral', hex: '#F08080' }, { name: 'LightSteelBlue', hex: '#B0C4DE' }, { name: 'PowderBlue', hex: '#B0E0E6' },
+            { name: 'MediumTurquoise', hex: '#48D1CC' }, { name: 'DarkOliveGreen', hex: '#556B2F' }, { name: 'ForestGreen', hex: '#228B22' },
+            { name: 'SeaGreen', hex: '#2E8B57' }, { name: 'DarkSlateGray', hex: '#2F4F4F' }, { name: 'SlateGray', hex: '#708090' },
+            { name: 'LightSkyBlue', hex: '#87CEFA' }, { name: 'LightPink', hex: '#FFB6C1' }, { name: 'DarkGoldenRod', hex: '#B8860B' },
+            { name: 'GoldenRod', hex: '#DAA520' }, { name: 'Wheat', hex: '#F5DEB3' }, { name: 'CornflowerBlue', hex: '#6495ED' },
+            { name: 'Thistle', hex: '#D8BFD8' }, { name: 'Tan', hex: '#D2B48C' }, { name: 'RosyBrown', hex: '#BC8F8F' },
+            { name: 'LightGoldenRodYellow', hex: '#FAFAD2' }, { name: 'PaleVioletRed', hex: '#DB7093' }, { name: 'MediumTurquoise', hex: '#48D1CC' },
+            { name: 'LightSteelBlue', hex: '#B0C4DE' }, { name: 'PapayaWhip', hex: '#FFEFD5' }, { name: 'SeaShell', hex: '#FFF5EE' },
+            { name: 'PeachPuff', hex: '#FFDAB9' }, { name: 'MistyRose', hex: '#FFE4E1' }, { name: 'AntiqueWhite', hex: '#FAEBD7' },
+            { name: 'NavajoWhite', hex: '#FFDEAD' }, { name: 'BurlyWood', hex: '#DEB887' }, { name: 'LightCyan', hex: '#E0FFFF' },
+            { name: 'AliceBlue', hex: '#F0F8FF' }, { name: 'LavenderBlush', hex: '#FFF0F5' }, { name: 'HoneyDew', hex: '#F0FFF0' },
+            { name: 'Ivory', hex: '#FFFFF0' }, { name: 'FloralWhite', hex: '#FFFAF0' }
+        ];
+
+        function displayColor(name, hex) {
+            return `
+                <div class="color-item">
+                    <div class="color-box" style="background-color: ${hex};"></div>
+                    <span class="color-name">${name} - ${hex}</span>
+                </div>
+               
+            `;
+        }
+
+        function createColorList(colors) {
+            const colorList = document.getElementById('colorList');
+            colorList.innerHTML = colors.map(color => displayColor(color.name, color.hex)).join('');
+        }
+
+        function filterColors(query) {
+            const filteredColors = colors.filter(color => color.name.toLowerCase().includes(query.toLowerCase()));
+            createColorList(filteredColors);
+        }
+
+        // Initially display all colors
+        createColorList(colors);
+    </script>
+    
+    
+
+    
+    
+    
+     
+        <!-- Shapes content goes here -->
+        <style>
+    body {
+        background-color: lightblue;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+    }
+    .shapes-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+    }
+    .box-container {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+    .box {
+        width: 150px;
+        height: 150px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: white;
+    }
+    .shape {
+        width: 100px;
+        height: 100px;
+        display: none;
+    }
+    .circle {
+        border-radius: 50%;
+        background-color: red;
+    }
+    .square {
+        background-color: blue;
+    }
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid red;
+    }
+    .ellipse {
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+        border-radius: 50% / 25%;
+    }
+    .polygon {
+        width: 200px;
+        height: 200px;
+        background-color: indigo;
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    }
+    .rectangle {
+        width: 150px;
+        height: 100px;
+        background-color: orange;
+    }
+    .hexagon {
+        width: 100px;
+        height: 55px;
+        background-color: purple;
+        position: relative;
+    }
+    .hexagon:before,
+    .hexagon:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+    }
+    .hexagon:before {
+        bottom: 100%;
+        border-bottom: 28px solid purple;
+    }
+    .hexagon:after {
+        top: 100%;
+        width: 0;
+        border-top: 28px solid purple;
+    }
+    .pentagon {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    }
+    .star {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    .heart {
+        width: 100px;
+        height: 90px;
+        background-color: aqua;
+        position: relative;
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 70%, 18% 100%, 0% 38%);
+    }
+    .octagon {
+        width: 100px;
+        height: 100px;
+        background-color: lightgreen;
+        clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    }
+    .diamond {
+        width: 100px;
+        height: 100px;
+        background-color: lightcoral;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    .parallelogram {
+        width: 150px;
+        height: 100px;
+        background-color: lightsalmon;
+        transform: skew(20deg);
+    }
+</style>
+</head>
+<body>
+<section id="shapes" style="display:none;">
+    <div class="shape circle"></div>
+    <div class="shape square"></div>
+    <div class="shape triangle"></div>
+    <div class="shape polygon"></div>
+    <div class="shape ellipse"></div>
+    <div class="shape rectangle"></div>
+    <div class="shape hexagon"></div>
+    <div class="shape pentagon"></div>
+    <div class="shape star"></div>
+    <div class="shape heart"></div>
+    <div class="shape octagon"></div>
+    <div class="shape diamond"></div>
+    <div class="shape parallelogram"></div>
+</div>
+<div class="box-container">
+    <div class="box" id="circleBox">Circle</div>
+    <div class="box" id="squareBox">Square</div>
+    <div class="box" id="triangleBox">Triangle</div>
+    <div class="box" id="polygonBox">Polygon</div>
+    <div class="box" id="ellipseBox">Ellipse</div>
+    <div class="box" id="rectangleBox">Rectangle</div>
+    <div class="box" id="hexagonBox">Hexagon</div>
+    <div class="box" id="pentagonBox">Pentagon</div>
+    <div class="box" id="starBox">Star</div>
+    <div class="box" id="heartBox">Heart</div>
+    <div class="box" id="octagonBox">Octagon</div>
+    <div class="box" id="diamondBox">Diamond</div>
+    <div class="box" id="parallelogramBox">Parallelogram</div>
+</div>
+</section>
+<script>
+    const circleBox = document.getElementById('circleBox');
+    const squareBox = document.getElementById('squareBox');
+    const triangleBox = document.getElementById('triangleBox');
+    const ellipseBox = document.getElementById('ellipseBox');
+    const polygonBox = document.getElementById('polygonBox');
+    const rectangleBox = document.getElementById('rectangleBox');
+    const hexagonBox = document.getElementById('hexagonBox');
+    const pentagonBox = document.getElementById('pentagonBox');
+    const starBox = document.getElementById('starBox');
+    const heartBox = document.getElementById('heartBox');
+    const octagonBox = document.getElementById('octagonBox');
+    const diamondBox = document.getElementById('diamondBox');
+    const parallelogramBox = document.getElementById('parallelogramBox');
+    
+    const circle = document.querySelector('.circle');
+    const square = document.querySelector('.square');
+    const triangle = document.querySelector('.triangle');
+    const ellipse = document.querySelector('.ellipse');
+    const polygon = document.querySelector('.polygon');
+    const rectangle = document.querySelector('.rectangle');
+    const hexagon = document.querySelector('.hexagon');
+    const pentagon = document.querySelector('.pentagon');
+    const star = document.querySelector('.star');
+    const heart = document.querySelector('.heart');
+    const octagon = document.querySelector('.octagon');
+    const diamond = document.querySelector('.diamond');
+    const parallelogram = document.querySelector('.parallelogram');
+
+    function hideAllShapes() {
+        circle.style.display = 'none';
+        square.style.display = 'none';
+        triangle.style.display = 'none';
+        ellipse.style.display = 'none';
+        polygon.style.display = 'none';
+        rectangle.style.display = 'none';
+        hexagon.style.display = 'none';
+        pentagon.style.display = 'none';
+        star.style.display = 'none';
+        heart.style.display = 'none';
+        octagon.style.display = 'none';
+        diamond.style.display = 'none';
+        parallelogram.style.display = 'none';
+    }
+
+    circleBox.addEventListener('click', function() {
+        hideAllShapes();
+        circle.style.display = 'block';
+    });
+
+    squareBox.addEventListener('click', function() {
+        hideAllShapes();
+        square.style.display = 'block';
+    });
+
+    triangleBox.addEventListener('click', function() {
+        hideAllShapes();
+        triangle.style.display = 'block';
+    });
+
+    ellipseBox.addEventListener('click', function() {
+        hideAllShapes();
+        ellipse.style.display = 'block';
+    });
+
+    polygonBox.addEventListener('click', function() {
+        hideAllShapes();
+        polygon.style.display = 'block';
+    });
+
+    rectangleBox.addEventListener('click', function() {
+        hideAllShapes();
+        rectangle.style.display = 'block';
+    });
+
+    hexagonBox.addEventListener('click', function() {
+        hideAllShapes();
+        hexagon.style.display = 'block';
+    });
+
+    pentagonBox.addEventListener('click', function() {
+        hideAllShapes();
+        pentagon.style.display = 'block';
+    });
+
+    starBox.addEventListener('click', function() {
+        hideAllShapes();
+        star.style.display = 'block';
+    });
+
+    heartBox.addEventListener('click', function() {
+        hideAllShapes();
+        heart.style.display = 'block';
+    });
+
+    octagonBox.addEventListener('click', function() {
+        hideAllShapes();
+        octagon.style.display = 'block';
+    });
+
+    diamondBox.addEventListener('click', function() {
+        hideAllShapes();
+        diamond.style.display = 'block';
+    });
+
+    parallelogramBox.addEventListener('click', function() {
+        hideAllShapes();
+        parallelogram.style.display = 'block';
+    });
+</script>       
+   
+
+
+
+
+
+
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #toolbar {
+            margin-bottom: 10px;
+        }
+        #editor {
+            border: 1px solid #ccc;
+            padding: 20px; /* Increased padding for better readability */
+            width: 100%; /* Full width */
+            height: 500px; /* Increased height */
+            overflow-y: auto;
+            background-color: #f9f9f9;
+            position: relative;
+            font-size: 16px;
+            box-sizing: border-box; /* Ensure padding and border are included in total width/height */
+        }
+        .placeholder {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #aaa;
+            pointer-events: none;
+            font-size: 16px;
+        }
+        button {
+            margin-right: 5px;
+        }
+        #colorPicker {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+  <section id="editor" style="display:none;"> 
+    <div id="toolbar">
+        <button onclick="formatText('bold')">Bold</button>
+        <button onclick="formatText('italic')">Italic</button>
+        <button onclick="formatText('underline')">Underline</button>
+        <button onclick="formatText('insertOrderedList')">Ordered List</button>
+        <button onclick="formatText('insertUnorderedList')">Unordered List</button>
+        <button onclick="createLink()">Add Link</button>
+        <input type="color" id="colorPicker" title="Pick Text Color">
+        <button onclick="copyText()">Copy Text</button>
+    </div>
+    <div id="editor" contenteditable="true">
+        <span class="placeholder">Type your work here...</span>
+   </section>
+    
+    
+    <script>
+        const editor = document.getElementById('editor');
+        const colorPicker = document.getElementById('colorPicker');
+        const placeholder = document.querySelector('.placeholder');
+
+        function formatText(command) {
+            editor.focus();
+            document.execCommand(command, false, null);
+        }
+
+        function createLink() {
+            const url = prompt('Enter the URL');
+            if (url) {
+                editor.focus();
+                document.execCommand('createLink', false, url);
+            }
+        }
+
+        function copyText() {
+            editor.focus();
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(editor);
+            selection.removeAllRanges();
+            selection.addRange(range);
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    alert('Text copied to clipboard with formatting!');
+                } else {
+                    alert('Failed to copy text.');
+                }
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy text.');
+            }
+        }
+
+        colorPicker.addEventListener('input', (event) => {
+            const color = event.target.value;
+            editor.focus();
+            document.execCommand('foreColor', false, color);
+        });
+
+        function checkPlaceholder() {
+            if (editor.textContent.trim() === '') {
+                placeholder.style.display = 'block';
+            } else {
+                placeholder.style.display = 'none';
+            }
+        }
+
+        editor.addEventListener('focus', () => {
+            placeholder.style.display = 'none';
+        });
+
+        editor.addEventListener('blur', () => {
+            checkPlaceholder();
+        });
+
+        // Initial placeholder check
+        checkPlaceholder();
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+   
+</body>
+</html>    
+    <style>
+    #editorContent {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        min-height: 150px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    #editorContent:empty:before {
+        content: attr(placeholder);
+        color: #888;
+    }
+    .toolbar {
+        margin-bottom: 10px;
+    }
+    button {
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    
+</style> 
+
+
+
+    <script>
+        function showSection(id) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            // Show the selected section
+            document.getElementById(id).style.display = 'block';
+        }
+
+        // Show the default section (first one)
+        showSection('colors');
+    </script>
+ 
+    <div class="conta section" id="About">
+        <h1>Project Information</h1>
+        <h1>Group 1:Color Spectrum </h1>
+        <div class="row">
+            <div class="column">
+                <p class="header">Matric Numbers</p>
+                <p class="content">N/CS/23/3133</p>
+                <p class="content">N/CS/23/3192</p>
+                <p class="content">N/CS/23/3183</p>
+                <p class="content">N/CS/23/3193</p>
+                <p class="content">N/CS/23/3167</p>
+                <p class="content">N/CS/23/3135</p>
+                <p class="content">N/CS/23/3159</p>
+                <p class="content">N/CS/23/3202</p>
+               <p class="content">N/CS/23/3162</p>
+    
+            </div>
+           
+            <div class="column">
+                <p class="header">Full<br>Names</p>
+                <p class="content">Shoaga Olamide</p>
+                <p class="content">Solanke Richard</p>
+                <p class="content">Omololu James</p>
+                <p class="content">Suru Samuel</p>
+                <p class="content">Abimbola </p>
+                <p class="content">Afuape Basit</p>
+                <p class="content">Adeniga Al ameen</p>
+                 <p class="content">Oyewale praise</p>
+                  <p class="content">Destiny Ukpere</p>
+       
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Color Spectrum Project. All rights reserved.
+    </footer>
+</section>
+    <script>     document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.getElementById('splash-screen').style.display = 'none';
+            }, 5000);
+        });
+
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(function(section) {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+    
+</body>
+</html>
